@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../style.css'
 
 const Student = () => {
     const [username, setUsername] = useState('');
@@ -22,21 +23,31 @@ const Student = () => {
     };
 
     return (
-        <div>
-            <h1>Student</h1>
+        <section className="section">
+            <h2 className="section-title">Student Section</h2>
+            <p>Enter the lesson ID or link provided by your teacher and your username.</p>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Username:
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Lesson ID:
-                    <input type="text" value={lessonID} onChange={(e) => setLessonID(e.target.value)} />
-                </label>
-                <button type="submit">Join Lesson</button>
+                <input
+                    className="input-field"
+                    type="text"
+                    placeholder="Enter your username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    className="input-field"
+                    type="text"
+                    placeholder="Enter lesson ID"
+                    value={lessonID}
+                    onChange={(e) => setLessonID(e.target.value)}
+                />
+                <button className="input-button" type="submit">
+                    Join Lesson
+                </button>
             </form>
-        </div>
+        </section>
     );
+
 };
 
 export default Student;

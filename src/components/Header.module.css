@@ -1,0 +1,95 @@
+.header {
+    background-color: var(--primary);
+    padding: 20px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: var(--second);
+}
+
+.navToggle {
+    display: none;
+    flex-direction: column;
+    height: 21px;
+    justify-content: space-between;
+    width: 26px;
+    cursor: pointer;
+}
+
+.navToggle span {
+    background-color: var(--white);
+    border-radius: 2px;
+    display: block;
+    height: 3px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary);
+        width: 100%;
+    }
+
+    .navigation.show {
+        display: flex;
+    }
+
+    .navToggle {
+        display: flex;
+    }
+}
+
+.themeSwitcher {
+    background-color: transparent;
+    border: none;
+    color: inherit; /* This will use the same text color as the header */
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 1rem; /* Add space between the theme switcher and the navigation */
+    outline: none;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.themeSwitcher:hover {
+    color: #ff9800; /* Change the color on hover */
+}

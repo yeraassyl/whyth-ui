@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../style.css'
 
 const SelectRole = () => {
     const navigate = useNavigate();
@@ -13,11 +14,33 @@ const SelectRole = () => {
     };
 
     return (
-        <div>
-            <h1>Select Your Role</h1>
-            <button onClick={() => handleRoleSelection('teacher')}>Teacher</button>
-            <button onClick={() => handleRoleSelection('student')}>Student</button>
-        </div>
+        // <div className="container">
+        //     <h1>Select Your Role</h1>
+        //     <button className="primary-btn" onClick={() => handleRoleSelection('teacher')}>
+        //         Teacher
+        //     </button>
+        //     <button className="primary-btn" onClick={() => handleRoleSelection('student')}>
+        //         Student
+        //     </button>
+        // </div>
+        <section className="hero">
+            <h1>Welcome to Our Learning Platform</h1>
+            <p>Choose your role: Teacher or Student</p>
+            <div className="role-selection-buttons">
+                <button
+                    className="role-selection-button"
+                    onClick={() => handleRoleSelection('teacher')}
+                >
+                    Teacher
+                </button>
+                <button
+                    className="role-selection-button"
+                    onClick={() => handleRoleSelection('student')}
+                >
+                    Student
+                </button>
+            </div>
+        </section>
     );
 };
 

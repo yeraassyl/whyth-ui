@@ -1,0 +1,282 @@
+:root {
+    --white: white;
+    --black: rgb(48, 48, 48);
+    --gray: rgb(250, 250, 250);
+    --primary: rgb(29, 147, 171);
+    --second: rgb(231, 248, 255);
+    --hover-color: #f3f3f3;
+    --bar-color: rgba(0, 0, 0, 0.1);
+    --theme-color: var(--gray);
+    --shadow: 50px 50px 100px 10px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+    --border-in-light: 1px solid rgb(222, 222, 222);
+    --gray-gray: rgba(0, 0, 0, 0.05)
+}
+
+body {
+    background-color: var(--gray);
+    color: var(--black);
+    font-family: "Noto Sans SC", "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    color: var(--black);
+}
+
+.sign-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sign-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Common */
+
+.hero {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--black);
+}
+
+.section {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--black);
+}
+
+.input-field {
+    display: block;
+    width: 100%;
+    max-width: 400px; /* Set a maximum width for the input field */
+    padding: 0.5rem;
+    margin: 1rem auto; /* Add 'auto' to center the input field */
+    border: var(--border-in-light);
+    border-radius: 4px;
+}
+
+.input-button:hover {
+    background-color: rgba(29, 147, 171, 0.8); /* Slightly darken the primary color on hover */
+}
+
+/* Select Role */
+
+.role-selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.role-selection-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.role-selection-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Teacher */
+
+.create-lesson-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create-lesson-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Chat */
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-area {
+    background-color: var(--white);
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message-container {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.message-container.user {
+    align-items: flex-end;
+}
+
+.message-container.ai .message-bubble {
+    background-color: var(--gray);
+    color: var(--black);
+    box-shadow: var(--card-shadow);
+}
+
+.message-container.user .message-bubble {
+    background-color: var(--second);
+    color: var(--black);
+    box-shadow: var(--card-shadow);
+}
+
+.message-bubble {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: var(--border-in-light);
+    margin-bottom: 0.25rem;
+    font-size: 1.1em;
+    border-width: 1.5px;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: var(--bar-color);
+    margin-top: -0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.input-area {
+    background-color: var(--white);
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    position: relative;
+    border: 1px solid var(--border-in-light);
+    border-radius: 4px;
+}
+
+.input-field-chat {
+    flex-grow: 1;
+    height: auto;
+    resize: none;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.help-button {
+    background-color: var(--white);
+    color: var(--bar-color);
+    border: 1px solid var(--border-in-light);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.input-button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--border-in-light);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.input-button, .help-button {
+    padding: 0.1rem 1rem;
+    height: 1.7rem;
+    line-height: 1.5rem;
+}
+
+.loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*.back-button {*/
+/*    background-color: var(--white);*/
+/*    color: var(--bar-color);*/
+/*    border: 1px solid var(--border-in-light);*/
+/*    padding: 0.25rem 1rem;*/
+/*    height: 2rem;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+
+/* Footer */
+
+.footer {
+    background-color: var(--gray);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.social-icon {
+    color: var(--primary);
+    margin: 0 0.5rem;
+}
+
+.social-icon:hover {
+    background-color: var(--hover-color);
+}
