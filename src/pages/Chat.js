@@ -43,23 +43,29 @@ const Chat = () => {
 
     return (
         <div className="chat">
-            <header className="chat-header">
-                <h2>Lesson Name / Topic</h2>
-            </header>
-            <div className="chat-area">
-                <div className="message-container ai">
-                    <div className="message-bubble">AI message content</div>
-                    <span className="timestamp">12:34 PM</span>
+            <div className="chat-window">
+                <div className="chat-header">
+                    <div className="chat-header-title">
+                        <div className="chat-header-title-main">
+                            Lesson name/Topic
+                        </div>
+                    </div>
                 </div>
-                <div className="message-container user">
-                    <div className="message-bubble">User message content</div>
-                    <span className="timestamp">12:35 PM</span>
+                <div className="chat-area">
+                    <div className="message-container ai">
+                        <div className="message-bubble">AI message content</div>
+                        <span className="timestamp">12:34 PM</span>
+                    </div>
+                    <div className="message-container user">
+                        <div className="message-bubble">User message content</div>
+                        <span className="timestamp">12:35 PM</span>
+                    </div>
                 </div>
-            </div>
-            <div className="input-area">
-                <textarea className="input-field-chat" rows="3"></textarea>
-                <button className="help-button">Help</button>
-                <button className="input-button">Send</button>
+                <div className="input-area">
+                    <textarea className="input-field-chat" rows="3"></textarea>
+                    <button className="help-button">Help</button>
+                    <button className="input-button">Send</button>
+                </div>
             </div>
         </div>
     );
