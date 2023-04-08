@@ -41,7 +41,7 @@ const Student = () => {
                     value={lessonID}
                     onChange={(e) => setLessonID(e.target.value)}
                 />
-                <button className="input-button" type="submit">
+                <button className="create-lesson-button" type="submit">
                     Join Lesson
                 </button>
             </form>
