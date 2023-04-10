@@ -52,19 +52,46 @@ const Chat = () => {
                     </div>
                 </div>
                 <div className="chat-area">
-                    <div className="message-container ai">
-                        <div className="message-bubble">AI message content</div>
-                        <span className="timestamp">12:34 PM</span>
+                    <div className="message-ai">
+                        <div className="message-container">
+                            <div className="message-avatar"></div>
+                            <div className="message-item">
+                                <div className="markdown-body">
+                                    <p>AI message content</p>
+                                </div>
+                            </div>
+                            <div className="message-actions">
+                                <div className="message-actions-date">
+                                    12:34 AM
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="message-container user">
-                        <div className="message-bubble">User message content</div>
-                        <span className="timestamp">12:35 PM</span>
+                    <div className="message-user">
+                        <div className="message-container">
+                            <div className="message-avatar"></div>
+                            <div className="message-item">
+                                <div className="markdown-body">
+                                    <p>User message content</p>
+                                </div>
+                            </div>
+                            <div className="message-actions">12:34 PM</div>
+                        </div>
                     </div>
                 </div>
                 <div className="input-area">
-                    <textarea className="input-field-chat" rows="3"></textarea>
-                    <button className="help-button">Help</button>
-                    <button className="input-button">Send</button>
+                    <div className="input-area-inner">
+                        <textarea className="input-field-chat" spellCheck="false" placeholder="Enter something"
+                                  rows="3"></textarea>
+                        <button className="button-icon input-send clickable">
+                            <div className="button-icon-icon">
+                                <svg></svg>
+                            </div>
+                            <div className="button-icon-text">
+                                Send
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

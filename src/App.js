@@ -9,14 +9,16 @@ import Footer from "./components/Footer"
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div className="container">
                 <Header/>
-                <Routes>
-                    <Route path="/" element={<SelectRole/>}/>
-                    <Route path="/teacher" element={<Teacher/>}/>
-                    <Route path="/student" element={<Student/>}/>
-                    <Route path="/chat" element={<Chat/>}/>
-                </Routes>
+                <div className="content-wrap">
+                    <Routes>
+                        <Route path="/" element={<SelectRole/>}/>
+                        <Route path="/teacher" element={<Teacher/>}/>
+                        <Route path="/student" element={<Student/>}/>
+                        <Route path="/chat" element={<Chat/>}/>
+                    </Routes>
+                </div>
                 <Footer/>
             </div>
         </Router>
