@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import '../style.css'
 
@@ -7,18 +7,32 @@ const Student = () => {
     const [username, setUsername] = useState('');
     const [lessonID, setLessonID] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const lessonIDFromURL = searchParams.get('lessonID');
+        if (lessonIDFromURL) {
+            setLessonID(lessonIDFromURL);
+        }
+    }, [location]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/session', { lesson_id: lessonID, username });
-            const { session_id } = response.data;
-            if (session_id) {
+            const response = await axios.post('/session', {lesson_id: lessonID, username});
+            if (response.status === 500) {
+                console.error('Error creating session:', response.data);
+                alert('Error creating session');
+            } else if (response.status === 400) {
+                console.log("No you can't")
+            } else {
                 navigate('/chat');
             }
         } catch (error) {
             console.error('Error creating session:', error);
+            alert('Error creating session');
         }
     };
 

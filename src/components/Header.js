@@ -1,8 +1,6 @@
 // Header.js
 import React from 'react';
-import { useState } from 'react';
-// import {Link} from 'react-router-dom';
-// import styles from './Header.module.css';
+import {useState} from 'react';
 import '../style.css';
 
 const Header = () => {
@@ -14,33 +12,17 @@ const Header = () => {
     };
 
     return (
-        // <header className={styles.header}>
-        //     <div className={styles.container}>
-        //         <div className={styles.headerContent}>
-        //             <h1 className={styles.logo}>Chat App</h1>
-        //             <nav className={styles.navigation} id="main-navigation">
-        //                 <Link to="/">Select Role</Link>
-        //                 <Link to="/teacher">Teacher</Link>
-        //                 <Link to="/student">Student</Link>
-        //                 <Link to="/chat">Chat</Link>
-        //             </nav>
-        //             <button
-        //                 className={styles.themeSwitcher}
-        //                 onClick={handleThemeSwitch}
-        //             >
-        //                 {isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
-        //             </button>
-        //             <button className={styles.navToggle} id="nav-toggle">
-        //                 <span></span>
-        //                 <span></span>
-        //                 <span></span>
-        //             </button>
-        //         </div>
-        //     </div>
-        // </header>
         <header className="header">
-            <div className="logo">Your Logo</div>
-            <button className="sign-button">Sign In</button>
+            <div className="nav">
+                <a href="/" className="nav-item">Your Logo</a>
+                <a href="/chat" className="nav-item">Chat</a>
+                <a href="/teacher" className="nav-item">Teacher</a>
+                <a href="/student" className="nav-item">Student</a>
+            </div>
+            <div>
+                <button className="help-button">Help</button>
+                <button className="about-button">About</button>
+            </div>
         </header>
     );
 };

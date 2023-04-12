@@ -11,8 +11,30 @@ const Chat = () => {
 
     useEffect(() => {
         const fetchChatHistory = async () => {
-            const response = await axios.get('/chat-history');
-            setMessages(response.data);
+            try {
+                const response = await axios.get('/chat-history');
+                if (response.status === 401) {
+                    const errorMessage = {
+                        content: 'Unauthorized access. Please log in.',
+                        role: 2,
+                    };
+                    setMessages([errorMessage]);
+                } else if (response.status === 500) {
+                    const errorMessage = {
+                        content: 'Server error',
+                        role: 2,
+                    };
+                    setMessages([errorMessage]);
+                } else {
+                    setMessages(response.data);
+                }
+            } catch (error) {
+                const errorMessage = {
+                    content: 'Error fetching chat history.',
+                    role: 2,
+                };
+                setMessages([errorMessage]);
+            }
         };
 
         fetchChatHistory();
@@ -33,10 +55,35 @@ const Chat = () => {
         setMessages([...messages, message, loaderMessage]);
         setInputValue('');
 
-        const response = await axios.post('/prompt', {prompt: inputValue});
-        const aiMessage = response.data;
-        setMessages([...messages, message, aiMessage]);
-        setLoading(false);
+        try {
+            const response = await axios.post('/prompt', {prompt: inputValue});
+            if (response.status === 401) {
+                const errorMessage = {
+                    content: 'Unauthorized access. Please log in.',
+                    role: 2,
+                };
+                setMessages([...messages, message, errorMessage]);
+            } else if (response.status === 400) {
+                console.log("No you can't")
+            } else if (response.status === 500) {
+                const errorMessage = {
+                    content: 'Error processing your message.',
+                    role: 2,
+                };
+                setMessages([...messages, message, errorMessage]);
+            } else {
+                const aiMessage = response.data;
+                setMessages([...messages, message, aiMessage]);
+            }
+        } catch (error) {
+            const errorMessage = {
+                content: 'Error processing your message.',
+                role: 2,
+            };
+            setMessages([...messages, message, errorMessage]);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleInputChange = (e) => {
