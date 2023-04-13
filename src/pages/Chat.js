@@ -5,6 +5,7 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState(false);
+    const [lessonName, setLessonName] = useState('');
 
     const inputRef = useRef();
     const chatAreaRef = useRef();
@@ -26,7 +27,8 @@ const Chat = () => {
                     };
                     setMessages([errorMessage]);
                 } else {
-                    setMessages(response.data);
+                    setMessages(response.data.messages);
+                    setLessonName(response.data.lessonName)
                 }
             } catch (error) {
                 const errorMessage = {
@@ -119,7 +121,7 @@ const Chat = () => {
                 <div className="chat-header">
                     <div className="chat-header-title">
                         <div className="chat-header-title-main">
-                            Lesson name/Topic
+                            {lessonName}
                         </div>
                     </div>
                 </div>
