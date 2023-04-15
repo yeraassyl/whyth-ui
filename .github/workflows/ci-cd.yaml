@@ -29,6 +29,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Add server to known hosts
+        run: |
+          echo "${{ secrets.FRONTEND_DROPLET_IP }} $(ssh-keyscan -t rsa ${{ secrets.FRONTEND_DROPLET_IP }})" >> ~/.ssh/known_hosts
+
       - name: Deploy React frontend
         run: |
           rsync -avz --delete --exclude=.git --exclude=node_modules ./ user@${{ secrets.FRONTEND_DROPLET_IP }}:~/app
