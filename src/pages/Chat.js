@@ -127,8 +127,8 @@ const Chat = () => {
                 </div>
                 <div className="chat-area" ref={chatAreaRef}>
                     {messages
-                        .filter((message) => message.role !== 0)
-                        .map((message, index) => (
+                        ?.filter((message) => message.role !== 0)
+                        ?.map((message, index) => (
                             <div key={index} className={`message-${message.role === 1 ? 'user' : 'ai'}`}>
                                 <div className="message-container">
                                     <div className="message-avatar"></div>
