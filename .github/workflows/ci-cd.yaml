@@ -35,5 +35,5 @@ jobs:
 
       - name: Deploy React frontend
         run: |
-          rsync -avz --delete --exclude=.git --exclude=node_modules ./ user@${{ secrets.FRONTEND_DROPLET_IP }}:~/app
-          ssh user@${{ secrets.FRONTEND_DROPLET_IP }} 'sudo systemctl restart nginx'
+          rsync -avz --delete --exclude=.git --exclude=node_modules ./ root@${{ secrets.FRONTEND_DROPLET_IP }}:~/app
+          ssh root@${{ secrets.FRONTEND_DROPLET_IP }} 'sudo systemctl restart nginx'
