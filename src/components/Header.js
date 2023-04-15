@@ -5,13 +5,6 @@ import '../style.css';
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    const [isDark, setIsDark] = useState(false);
-
-    const handleThemeSwitch = () => {
-        setIsDark(!isDark);
-        document.documentElement.classList.toggle('dark-theme');
-    };
-
     return (
         <header className="header">
             <div className="nav">
