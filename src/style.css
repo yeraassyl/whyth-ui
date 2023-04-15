@@ -135,6 +135,28 @@ body {
     background-color: var(--hover-color);
 }
 
+.text-decoration-none {
+    text-decoration: none;
+
+}
+
+/* Remove button text decoration */
+
+button a:visited {
+    color: inherit;
+}
+
+/* Remove link highlight when focused */
+button a:focus {
+    outline: none;
+}
+
+/* Remove link highlight when active */
+button a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Common */
 
 .hero, .section {
@@ -411,4 +433,48 @@ body {
     border-radius: 20px;
     background-clip: content-box;
     border: 1px solid transparent
+}
+
+.notion-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #333;
+}
+
+.notion-content h1,
+.notion-content h2,
+.notion-content h3,
+.notion-content h4,
+.notion-content h5,
+.notion-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.notion-content p {
+    margin-bottom: 1.5rem;
+}
+
+.notion-content ul,
+.notion-content ol {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.notion-content blockquote {
+    padding-left: 1.5rem;
+    border-left: 4px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.notion-content pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-bottom: 1.5rem;
 }

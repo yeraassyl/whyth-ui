@@ -4,11 +4,11 @@ import '../style.css';
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>© 2023 Your Company. All rights reserved.</p>
+            <p>© 2023 Something something. All rights reserved.</p>
             <div>
-                <a href="https://www.facebook.com" className="social-icon">Facebook</a>
-                <a href="https://www.twitter.com" className="social-icon">Twitter</a>
-                <a href="https://www.linkedin.com" className="social-icon">LinkedIn</a>
+                <a href="https://github.com/yeraassyl" className="social-icon">Github</a>
+                <a href="https://t.me/yeraassyl" className="social-icon">Telegram</a>
+                <a href="https://www.linkedin.com/in/yerassyl" className="social-icon">LinkedIn</a>
             </div>
         </footer>
     );

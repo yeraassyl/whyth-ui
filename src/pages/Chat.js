@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState('teach me');
     const [loading, setLoading] = useState(false);
     const [lessonName, setLessonName] = useState('');
 
@@ -32,7 +32,7 @@ const Chat = () => {
                 }
             } catch (error) {
                 const errorMessage = {
-                    content: 'Error fetching chat history.',
+                    content: 'Please try to create a session as a student.',
                     role: 2,
                 };
                 setMessages([errorMessage]);

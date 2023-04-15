@@ -5,6 +5,8 @@ import Student from './pages/Student';
 import Chat from './pages/Chat';
 import Header from "./components/Header";
 import Footer from "./components/Footer"
+import HelpPage from './pages/Help';
+import AboutPage from './pages/About';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
                         <Route path="/teacher" element={<Teacher/>}/>
                         <Route path="/student" element={<Student/>}/>
                         <Route path="/chat" element={<Chat/>}/>
+                        <Route path="/help" element={<HelpPage/>}/>
+                        <Route path="/about" element={<AboutPage/>}/>
                     </Routes>
                 </div>
                 <Footer/>
