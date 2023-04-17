@@ -21,7 +21,7 @@ const Student = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('/session', {lesson_id: lessonID, username});
+            const response = await axios.post('/api/session', {lesson_id: lessonID, username});
             if (response.status === 500) {
                 console.error('Error creating session:', response.data);
                 alert('Error creating session');

@@ -13,7 +13,7 @@ const Chat = () => {
     useEffect(() => {
         const fetchChatHistory = async () => {
             try {
-                const response = await axios.get('/chat-history');
+                const response = await axios.get('/api/chat-history');
                 if (response.status === 401) {
                     const errorMessage = {
                         content: 'Unauthorized access. Please log in.',
@@ -58,7 +58,7 @@ const Chat = () => {
         setInputValue('');
 
         try {
-            const response = await axios.post('/prompt', {prompt: inputValue});
+            const response = await axios.post('/api/prompt', {prompt: inputValue});
             if (response.status === 401) {
                 const errorMessage = {
                     content: 'Unauthorized access. Please log in.',

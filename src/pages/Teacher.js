@@ -9,7 +9,7 @@ const Teacher = () => {
 
     const createLesson = async () => {
         try {
-            const response = await axios.post('/lesson', {preset});
+            const response = await axios.post('/api/lesson', {preset});
             if (response.status === 500) {
                 console.error('Error creating session:', response.data);
                 alert('Error creating session');
