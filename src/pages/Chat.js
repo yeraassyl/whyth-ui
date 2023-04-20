@@ -32,7 +32,7 @@ const Chat = () => {
                 }
             } catch (error) {
                 const errorMessage = {
-                    content: 'Please try to create a session as a student.',
+                    content: 'Please join a lesson to chat with AI.',
                     role: 2,
                 };
                 setMessages([errorMessage]);

@@ -24,20 +24,20 @@ const SelectRole = () => {
         //     </button>
         // </div>
         <section className="hero">
-            <h1>Welcome to Our Learning Platform</h1>
-            <p>Choose your role: Teacher or Student</p>
+            <h1>AI Teaching Assistant</h1>
+            <p><b>Join</b> a lesson or <b>Start</b> one:</p>
             <div className="role-selection-buttons">
-                <button
-                    className="role-selection-button"
-                    onClick={() => handleRoleSelection('teacher')}
-                >
-                    Teacher
-                </button>
                 <button
                     className="role-selection-button"
                     onClick={() => handleRoleSelection('student')}
                 >
-                    Student
+                    Join
+                </button>
+                <button
+                    className="role-selection-button"
+                    onClick={() => handleRoleSelection('teacher')}
+                >
+                    Start
                 </button>
             </div>
         </section>

@@ -8,18 +8,15 @@
 
 Example lesson topics: "Computer Science 101: variables", "Physics: thermodynamics", "Calculus: limits".
 
-### Limitations:
-
-> The platform does not offer **lesson management & progress tracking** features yet.
-Also, You **can't monitor** student's chat history.
-
+> The platform does not offer **lesson management & progress tracking** features yet. 
+> Also, You **can't monitor** student's chat history.
 
 
 ## For Students
 -   Open the link provided by your teacher, enter your name, and create a session.
 -   Use the chat feature to ask the AI any questions about the lesson.
 
-## Tips for using the AI chat
+## AI chat
 -   Start off the conversation by typing 'teach me'.
 -   Request step-by-step explanations from the AI.
 -   Begin with concise questions instead of asking the AI to explain everything at once.
@@ -28,6 +25,8 @@ Also, You **can't monitor** student's chat history.
 -   If an answer is cut off, type 'continue' to prompt the AI to finish the response.
 -   Experiment with different question formats and styles to maximize the AI's potential.
 
+> Please **note** that currently the **conversation** is limited to **~4000** words. 
+> Consider creating a **new** session if you **encounter** this issue. It is going to be **fixed** in newer versions.
 
 ## Troubleshooting
 

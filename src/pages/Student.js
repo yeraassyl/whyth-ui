@@ -23,23 +23,23 @@ const Student = () => {
         try {
             const response = await axios.post('/api/session', {lesson_id: lessonID, username});
             if (response.status === 500) {
-                console.error('Error creating session:', response.data);
-                alert('Error creating session');
+                console.error('Error creating session: ' + response.data);
+                alert('Seems like it\'s not working right now, try again later.');
             } else if (response.status === 400) {
                 console.log("No you can't")
             } else {
                 navigate('/chat');
             }
         } catch (error) {
-            console.error('Error creating session:', error);
-            alert('Error creating session');
+            console.error('Error creating session: ' + error);
+            alert('Seems like it\'s not working right now, try again later.');
         }
     };
 
     return (
         <section className="section">
-            <h2 className="section-title">Student Section</h2>
-            <p>Enter the lesson ID or link provided by your teacher and your username.</p>
+            <h2 className="section-title">Join a Lesson</h2>
+            <p>Enter your name and the lesson ID</p>
             <form onSubmit={handleSubmit}>
                 <input
                     className="input-field"

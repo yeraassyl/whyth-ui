@@ -75,6 +75,11 @@ body {
     cursor: pointer;
 }
 
+.nav a {
+    color: var(--black);
+    text-decoration: none;
+}
+
 .footer {
     margin-bottom: 20px;
 }
@@ -107,6 +112,10 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all .3s ease;
+}
+
+.role-selection-button {
+    width: 80px;
 }
 
 .about-button:hover, .role-selection-button:hover, .create-lesson-button:hover {

@@ -4,7 +4,7 @@
 //     app.use(
 //         ['/session', '/lesson', '/prompt', '/chat-history'],
 //         createProxyMiddleware({
-//             target: 'http://142.93.97.228:1337', // Replace with the address of your backend server
+//             target: 'http://localhost:1337', // Replace with the address of your backend server
 //             changeOrigin: true,
 //         })
 //     );
