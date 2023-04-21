@@ -20,7 +20,7 @@ Example lesson topics: "Computer Science 101: variables", "Physics: thermodynami
 -   Use the chat feature to ask the AI any questions about the lesson.
 
 ## AI chat
--   Start off the conversation by typing 'teach me'.
+-   Start off the conversation by typing 'teach me' or 'tell me about the subject in two sentences'.
 -   Request step-by-step explanations from the AI.
 -   Begin with concise questions instead of asking the AI to explain everything at once.
 -   Ask for clarification on anything that is unclear.

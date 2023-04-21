@@ -42,7 +42,7 @@ const Teacher = () => {
                 <p>
                     The lesson id is: {lessonID}
                     <br/>
-                    <center>or</center>
+                    <b>or</b>
                     <br/>
                     Share this link with your students:
                     <br/>

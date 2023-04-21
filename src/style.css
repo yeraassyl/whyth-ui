@@ -371,12 +371,45 @@ button a:active {
     opacity: 75%;
 }
 
+.button-icon-continue {
+    background-color: transparent;
+    color: var(--black);
+    padding: 10px;
+    border: var(--border-in-light);
+    border-width: 1px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    width: 69px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+.button-icon-continue:hover {
+    border-color: var(--primary);
+    background-color: var(--hover-color);
+}
+
 .input-send {
     background-color: var(--primary);
     color: #fff;
     position: absolute;
     right: 10px;
-    bottom: 10px
+    bottom: 9px
+}
+
+.input-continue {
+    background-color: var(--white);
+    color: var(--black);
+    position: absolute;
+    right: 10px;
+    bottom: 51px;
 }
 
 .button-icon-icon {
@@ -389,6 +422,10 @@ button a:active {
 
 .button-icon-text {
     margin-left: 5px;
+    font-size: 12px;
+}
+
+.button-icon-text-continue {
     font-size: 12px;
 }
 
