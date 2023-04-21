@@ -6,6 +6,9 @@
 - Share the generated link with your students to grant them access to the lesson.
 - Refer to these examples for guidance on creating lessons.
 
+> **Note**: The lesson is only available for 24 hours only! It means all the chat sessions will expire, and you can't access them. 
+
+
 Example lesson topics: "Computer Science 101: variables", "Physics: thermodynamics", "Calculus: limits".
 
 > The platform does not offer **lesson management & progress tracking** features yet. 
@@ -30,9 +33,9 @@ Example lesson topics: "Computer Science 101: variables", "Physics: thermodynami
 
 ## Troubleshooting
 
-👨‍💻 If you have **questions** or something goes **wrong**, please contact me  directly at **[telegram]()**:
+👨‍💻 If you have **questions** or something goes **wrong**, please contact me  directly at **[telegram](https://t.me/yeraassyl)**:
 
 
 ## Feedback
 
-❤️ Please [tell us]() about your experience and share ideas for **improvements & features**
+❤️ Please [tell us](https://forms.gle/cLRpt3YrufELjBCaA) about your experience and share ideas for **improvements & features**

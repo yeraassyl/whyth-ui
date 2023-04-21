@@ -12,15 +12,21 @@ Powered by [OpenAI API](https://platform.openai.com/)
 ## Feedback
 
 Further **improvements & features** will be **based** on your needs and requests, so   
-please leave a **[feedback]()**:
+please leave a **[feedback](https://forms.gle/cLRpt3YrufELjBCaA)**:
 
 ## My socials
 
 My socials: [Telegram](https://t.me/yeraassyl), [Github](https://github.com/yeraassyl), [Linkedin](https://linkedin.com/in/yerassyl). 
 
 
-
 ## Thanks to
 
 Colors and chat design inspired by **[chatgpt-next-web](https://github.com/Yidadaa/ChatGPT-Next-Web)**:
 
+## WIP
+
+1. Chat markdown formatting
+2. Streaming AI response instead of loader
+3. Responsive UI for mobile devices
+4. Fine-tuning the model to deliver clear & concise responses
+5. Bug-fixes
