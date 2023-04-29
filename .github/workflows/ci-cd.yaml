@@ -1,4 +1,4 @@
-name: Curly-meme Frontend CI/CD
+name: Whyth Frontend CI/CD
 
 on:
   push:
