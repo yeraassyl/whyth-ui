@@ -21,6 +21,10 @@
     --full-height: 100%;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--gray);
     color: var(--black);
@@ -121,7 +125,7 @@ body {
 }
 
 .role-selection-button {
-    width: 80px;
+    width: 90;
 }
 
 .about-button:hover,
@@ -201,6 +205,99 @@ button a:active {
     gap: 1rem;
 }
 
+/* Teacher */
+
+.lesson-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lesson-form__nested {
+    width: 100%;
+    max-width: 400px;
+}
+
+.text-input-container {
+    width: 100%;
+}
+
+.preset-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.preset__checkbox-wrapper {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    color: var(--black);
+    transition: color 0.2s ease;
+}
+
+input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background-color: var(--white);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+input[type="checkbox"] + label::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border-right: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+input[type="checkbox"]:hover + label {
+    color: var(--primary);
+}
 
 
 /* Chat */

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
-    const [inputValue, setInputValue] = useState('teach me');
+    const [inputValue, setInputValue] = useState('hey');
     const [loading, setLoading] = useState(false);
     const [lessonName, setLessonName] = useState('');
 

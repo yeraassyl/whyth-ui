@@ -7,13 +7,15 @@ const Teacher = () => {
     const [presets, setPresets] = useState([]);
     const [lessonName, setLessonName] = useState('');
     const [lessonID, setLessonID] = useState('');
-    const [formValues, setFormValues] = useState({});
+    const [userInputValues, setUserInputValues] = useState([]);
 
     useEffect(() => {
         const fetchPresets = async () => {
             try {
                 const response = await axios.get('/api/presets');
                 setPresets(response.data);
+                const initialUserInputValues = new Array(response.data.length).fill('');
+                setUserInputValues(initialUserInputValues);
             } catch (error) {
                 console.error('Error fetching presets:', error);
             }
@@ -24,8 +26,14 @@ const Teacher = () => {
 
 
     const createLesson = async () => {
+        const presetsUpdated = presets.map((preset, index) => {
+            if (preset.type === 2) {
+                return { ...preset, value: preset.value.replace('%s', userInputValues[index]) };
+            }
+            return preset;
+        });
         try {
-            const response = await axios.post('/api/lesson', { presets: formValues, lessonName: lessonName });
+            const response = await axios.post('/api/lesson', { presets: presetsUpdated, lessonName: lessonName });
             if (response.status === 500) {
                 console.error('Error creating a lesson: ' + response.data);
                 alert('Seems like it\'s not working right now, try again later.');
@@ -41,57 +49,67 @@ const Teacher = () => {
     };
 
     const handleInputChange = (index, field, value) => {
-        const newFormValues = { ...formValues };
-        if (!newFormValues[index]) {
-            newFormValues[index] = {};
+        const newPresets = [...presets];
+
+        if (field === 'checked') {
+            newPresets[index][field] = value;
+            setPresets(newPresets);
+        } else if (field === 'userValue') {
+            const newUserInputValues = [...userInputValues];
+            newUserInputValues[index] = value;
+            setUserInputValues(newUserInputValues);
         }
-        newFormValues[index][field] = value;
-        setFormValues(newFormValues);
+
+        console.log(presets)
     };
 
     return (
         <section className="section teacher-section">
             <h2 className="section-title">Create a lesson as a Teacher</h2>
             <form className="lesson-form">
-                <div className="input-container">
-                    <label htmlFor="lessonName" className="form-label">Lesson subject:</label>
-                    <input
-                        id="lessonName"
-                        className="input-field"
-                        type="text"
-                        placeholder="Enter lesson subject"
-                        value={lessonName}
-                        onChange={(e) => setLessonName(e.target.value)}
-                    />
-                </div>
-                {presets.map((preset, index) => (
-                    <div key={index} className="preset-container">
-                        <div className="checkbox-container">
-                            <input
-                                type="checkbox"
-                                id={`preset-${index}`}
-                                checked={preset.checked}
-                                onChange={(e) => handleInputChange(index, 'checked', e.target.checked)}
-                            />
-                            <label htmlFor={`preset-${index}`}>{preset.name}</label>
-                        </div>
-                        {preset.type === 2 && (
-                            <div className="text-input-container">
-                                <input
-                                    type="text"
-                                    placeholder="Enter value"
-                                    onChange={(e) =>
-                                        handleInputChange(index, 'value', `${preset.value.replace('%s', e.target.value)}`)
-                                    }
-                                />
-                            </div>
-                        )}
+                <div className="lesson-form__nested">
+                    <div>
+                        <label htmlFor="lessonName" className="form-label">Lesson subject:</label>
+                        <input
+                            id="lessonName"
+                            className="input-field"
+                            type="text"
+                            placeholder="Enter lesson subject"
+                            value={lessonName}
+                            onChange={(e) => setLessonName(e.target.value)}
+                        />
                     </div>
-                ))}
-                <div className="button-container">
-                    <button type="button" className="create-lesson-button" onClick={createLesson}>
-                        Create Lesson
-                    </button>
+                    <br></br>
+                    <label className="form-label">Configure AI chat:</label>
+                    {presets.map((preset, index) => (
+                        <div key={index} className="preset-container">
+                            <div className="checkbox-container preset__checkbox-wrapper">
+                                <input
+                                    type="checkbox"
+                                    id={`preset-${index}`}
+                                    checked={preset.checked}
+                                    onChange={(e) => handleInputChange(index, 'checked', e.target.checked)}
+                                />
+                                <label htmlFor={`preset-${index}`}>{preset.name}</label>
+                            </div>
+                            {preset.type === 2 && (
+                                <div className="text-input-container">
+                                    <input
+                                        type="text"
+                                        className="input-field"
+                                        placeholder="Enter value"
+                                        value={userInputValues[index]}
+                                        onChange={(e) => handleInputChange(index, 'userValue', e.target.value)}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                    <div className="button-container">
+                        <button type="button" className="create-lesson-button" onClick={createLesson}>
+                            Create Lesson
+                        </button>
+                    </div>
                 </div>
             </form>
             {lessonID && (
@@ -100,7 +118,7 @@ const Teacher = () => {
                     <br />
                     <b>or</b>
                     <br />
-                    Share this link with your students:
+                    Please <b>save</b> this link and share with your students:
                     <br />
                     <Link to={`/student?lessonID=${lessonID}`}>
                         {`${window.location.origin}/student?lessonID=${lessonID}`}
