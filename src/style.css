@@ -24,7 +24,7 @@
 body {
     background-color: var(--gray);
     color: var(--black);
-    font-family: Noto Sans SC,SF Pro SC,SF Pro Text,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: Noto Sans SC, SF Pro SC, SF Pro Text, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -41,7 +41,8 @@ body {
 
 /* Header & Footer */
 
-.header, .footer {
+.header,
+.footer {
     background-color: transparent;
     text-align: center;
     padding: 15px;
@@ -98,13 +99,18 @@ body {
     background-color: var(--hover-color);
 }
 
-.logo, .hero h1, .section-title {
+.logo,
+.hero h1,
+.section-title {
     color: var(--black);
 }
 
 /* Buttons */
 
-.about-button, .role-selection-button, .create-lesson-button, .input-button {
+.about-button,
+.role-selection-button,
+.create-lesson-button,
+.input-button {
     background-color: var(--primary);
     color: var(--white);
     padding: 10px 20px;
@@ -118,7 +124,9 @@ body {
     width: 80px;
 }
 
-.about-button:hover, .role-selection-button:hover, .create-lesson-button:hover {
+.about-button:hover,
+.role-selection-button:hover,
+.create-lesson-button:hover {
     opacity: 75%;
 }
 
@@ -168,7 +176,8 @@ button a:active {
 
 /* Common */
 
-.hero, .section {
+.hero,
+.section {
     background-color: transparent;
     padding: 15px;
     text-align: center;
@@ -192,16 +201,20 @@ button a:active {
     gap: 1rem;
 }
 
+
+
 /* Chat */
 
 .chat {
     display: flex;
     flex-direction: column;
     /* Set the maximum width for the chat container */
-    margin: 0 auto; /* Center the chat container */
+    margin: 0 auto;
+    /* Center the chat container */
     /* Add rounded borders */
     /* Add a subtle shadow */
-    overflow: hidden; /* Hide any overflowing content */
+    overflow: hidden;
+    /* Hide any overflowing content */
 
     border: var(--border-in-light);
     border-radius: 20px;
@@ -230,7 +243,7 @@ button a:active {
     align-items: center;
     justify-content: space-between;
     padding: 14px 20px;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     position: relative;
 }
 
@@ -265,6 +278,7 @@ button a:active {
     display: flex;
     flex-direction: row-reverse;
 }
+
 .message-container {
     max-width: var(--message-max-width);
     display: flex;
@@ -282,7 +296,7 @@ button a:active {
     max-width: 100%;
     margin-top: 10px;
     border-radius: 10px;
-    background-color: rgba(0,0,0,.05);
+    background-color: rgba(0, 0, 0, .05);
     padding: 10px;
     font-size: 14px;
     -webkit-user-select: text;
@@ -293,11 +307,11 @@ button a:active {
     position: relative;
 }
 
-.message-user>.message-container>.message-item{
+.message-user>.message-container>.message-item {
     background-color: var(--second)
 }
 
-.message-user>.message-container{
+.message-user>.message-container {
     align-items: flex-end
 }
 
@@ -314,9 +328,7 @@ button a:active {
     color: #aaa;
 }
 
-.prompt_hints {
-
-}
+.prompt_hints {}
 
 .input-area {
     width: 100%;
@@ -336,7 +348,7 @@ button a:active {
     width: 100%;
     border-radius: 10px;
     border: var(--border-in-light);
-    box-shadow: 0 -2px 5px rgba(0,0,0,.03);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .03);
     background-color: var(--white);
     color: var(--black);
     font-family: inherit;
@@ -345,7 +357,7 @@ button a:active {
     outline: none;
 }
 
-.input-field-chat:focus{
+.input-field-chat:focus {
     border: 1px solid var(--primary)
 }
 
@@ -447,6 +459,7 @@ button a:active {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

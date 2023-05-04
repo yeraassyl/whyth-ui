@@ -38,7 +38,7 @@ const Student = () => {
 
     return (
         <section className="section">
-            <h2 className="section-title">Join a Lesson</h2>
+            <h2 className="section-title">Join lesson as a Student</h2>
             <p>Enter your name and the lesson ID</p>
             <form onSubmit={handleSubmit}>
                 <input
