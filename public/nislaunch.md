@@ -2,7 +2,7 @@
 
 Dear NIS community,
 
-I am excited to introduce an application that aims to enhance the learning experience by making AI more accessbile to schools. The core feature of the application is that it allows teachers to create tailored lessons which students can then engage with using an AI chat interface. 
+I am excited to introduce an application that aims to enhance the learning experience by making AI more accessible to schools. The core feature of the application is that it allows teachers to create tailored lessons that students can then engage with using an AI chat interface. 
 
 By integrating AI into the learning process, schools will aim to facilitate a better understanding of complex concepts, encourage self-paced learning, and foster an environment of interactive and experiential learning.
 
@@ -32,7 +32,7 @@ Btw, the project is non-profit, [open-source](https://github.com/yeraassyl/whyth
 ## Help & Troubleshooting
 
 Please see help [page](https://whyth.app/help) for more detailed instructions.
-See about [page](https://whyth.app/about) for roadmap & contact info.
+See about [page](https://whyth.app/about) for the roadmap & contact info.
 
 Contact me directly in [telegram](https://t.me/yeraassyl) if you couldn't resolve your issues.
 
