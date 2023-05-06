@@ -15,7 +15,7 @@ Btw, the project is non-profit, [open-source](https://github.com/yeraassyl/whyth
 
 *Best Regards,*
 
-*Yerassyl Bakytnuruly*
+*Yerassyl*
 
 
 ***
