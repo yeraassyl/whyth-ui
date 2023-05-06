@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import HelpPage from './pages/Help';
 import AboutPage from './pages/About';
+import NISLaunchPage from './pages/NISLaunch';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/chat" element={<Chat/>}/>
                         <Route path="/help" element={<HelpPage/>}/>
                         <Route path="/about" element={<AboutPage/>}/>
+                        <Route path="/nis" element={<NISLaunchPage/>}/>
                     </Routes>
                 </div>
                 <Footer/>
