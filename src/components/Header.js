@@ -11,7 +11,6 @@ const Header = () => {
                 <a href="/teacher" className="nav-item">Teacher</a>
                 <a href="/student" className="nav-item">Student</a>
                 <a href="/chat" className="nav-item">Chat</a>
-                <a href="/nis" className="nav-item">NIS Launch</a>
             </div>
             <div>
                 <Link className="text-decoration-none" to="/help"><button className="help-button">Help</button></Link>
